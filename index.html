@@ -1,92 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arsiqx | Kawaii Profile</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Cherry+Swash&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arsiqx | ✨かわいいプロファイル✨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cherry+Swash&family=Kosugi+Maru&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0; padding: 0;
       box-sizing: border-box;
-      font-family: 'Nunito', sans-serif;
+      font-family: 'Kosugi Maru', sans-serif;
     }
 
     body {
-      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      background: linear-gradient(to top left, #ffd6ec, #ffe3f4);
+      overflow: hidden;
       color: #333;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       flex-direction: column;
+      position: relative;
     }
 
     .container {
-      background: white;
+      background: #fffafa;
       padding: 2rem;
       border-radius: 2rem;
-      box-shadow: 0 0 30px rgba(255, 192, 203, 0.5);
+      box-shadow: 0 0 30px rgba(255, 192, 203, 0.6);
       text-align: center;
-      max-width: 400px;
-      border: 4px dashed pink;
+      max-width: 420px;
+      border: 5px dotted #ffb6c1;
+      z-index: 2;
     }
 
     h1 {
       font-family: 'Cherry Swash', cursive;
       font-size: 2.5rem;
-      color: #ff4081;
-      margin-bottom: 0.5rem;
+      color: #ff69b4;
+      margin-bottom: 0.3rem;
     }
 
     h2 {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #888;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.3rem;
     }
 
     .profile-img {
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
-      border: 3px solid #ffb6c1;
+      border: 4px solid #ffc0cb;
       margin-bottom: 1rem;
       object-fit: cover;
+      box-shadow: 0 0 12px #ff69b4;
     }
 
     p {
       font-size: 1rem;
       color: #555;
       margin-bottom: 1rem;
+      line-height: 1.6;
     }
 
     .socials a {
-      margin: 0 10px;
+      display: inline-block;
+      margin: 0 8px;
       color: #ff69b4;
       text-decoration: none;
       font-weight: bold;
+      background: #ffeaf6;
+      padding: 6px 12px;
+      border-radius: 12px;
+      border: 1px solid #ffb6c1;
+      transition: all 0.3s ease;
     }
 
     .socials a:hover {
-      text-decoration: underline;
+      background: #ffdee9;
+      transform: scale(1.05);
     }
 
     .music-control {
-      margin-top: 1.5rem;
+      margin-top: 1.3rem;
       font-size: 0.9rem;
     }
 
     .music-control button {
-      background: pink;
+      background: #ffcdf3;
       border: none;
-      padding: 5px 10px;
-      border-radius: 8px;
+      padding: 6px 12px;
+      border-radius: 10px;
       cursor: pointer;
-      margin-left: 5px;
+      margin-left: 8px;
+      box-shadow: 0 0 5px #ffb6c1;
     }
 
     .music-control button:hover {
-      background: #ffc0cb;
+      background: #ffc8e2;
+    }
+
+    /* Sakura animation */
+    .sakura {
+      position: absolute;
+      top: -10px;
+      animation: fall 8s linear infinite;
+      color: #ffb6c1;
+      font-size: 24px;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
     }
   </style>
 </head>
@@ -94,32 +127,46 @@
 
   <div class="container">
     <img src="https://i.pinimg.com/564x/1b/3e/1c/1b3e1c609e5c9a3fd93cce27a3b58c0b.jpg" alt="Profile" class="profile-img">
-    <h1>Arsiqx</h1>
-    <h2>✨ Anime Lover | Car Enthusiast | AI Builder ✨</h2>
-    <p>Welcome to my kawaii little corner on the internet 💖<br>
-    I love cars, coding, anime, and chasing dreams~ 🌙</p>
+    <h1>🌸 Arsiqx 🌸</h1>
+    <h2>✨ AI Builder | Car Otaku | Anime Soul ✨</h2>
+    <p>
+      こんにちは〜！I'm Arsiqx 🌈<br>
+      Welcome to my magical kawaii profile page 💕<br>
+      I build dreams with code & horsepower 💻🚗
+    </p>
     <div class="socials">
-      <a href="#">Instagram</a>
-      <a href="#">GitHub</a>
-      <a href="#">YouTube</a>
+      <a href="#">💖 Instagram</a>
+      <a href="#">🌸 GitHub</a>
+      <a href="#">📺 YouTube</a>
     </div>
     <div class="music-control">
-      🎵 Now Playing: <strong>Kimi no Shiranai Monogatari</strong>
-      <button onclick="toggleMusic()">Mute/Unmute</button>
+      🎶 BGM: <em>Kimi no Shiranai Monogatari</em>
+      <button onclick="toggleMusic()">Mute / Unmute</button>
     </div>
   </div>
 
-  <!-- Music Autoplay -->
-  <audio id="bg-music" autoplay loop>
-    <source src="https://files.catbox.moe/q9h1v8.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-
+  <!-- Sakura falling animation -->
   <script>
+    for (let i = 0; i < 20; i++) {
+      let sakura = document.createElement("div");
+      sakura.className = "sakura";
+      sakura.style.left = Math.random() * 100 + "vw";
+      sakura.style.animationDuration = 6 + Math.random() * 5 + "s";
+      sakura.innerText = "🌸";
+      document.body.appendChild(sakura);
+    }
+
     const music = document.getElementById('bg-music');
     function toggleMusic() {
       music.muted = !music.muted;
     }
   </script>
+
+  <!-- Music autoplay -->
+  <audio id="bg-music" autoplay loop>
+    <source src="https://files.catbox.moe/q9h1v8.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
 </body>
 </html>
