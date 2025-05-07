@@ -3,159 +3,180 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Arsiqx ✨かわいい異世界✨</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cherry+Swash&family=Kosugi+Maru&display=swap" rel="stylesheet">
+  <title>Arsiqx ⚡ Dark Realm</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Kosugi Maru', sans-serif;
     }
 
     body {
-      background: linear-gradient(to top left, #ffe6f0, #ffe3f3, #fff0f5);
+      font-family: 'Share Tech Mono', monospace;
+      background: #0b0b0f;
+      color: #00ffe7;
       overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      flex-direction: column;
-      position: relative;
+      height: 100vh;
+    }
+
+    .rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      pointer-events: none;
+      z-index: 1;
     }
 
     .container {
-      background: rgba(255, 248, 252, 0.95);
-      padding: 2rem;
-      border-radius: 2rem;
-      box-shadow: 0 0 30px rgba(255, 182, 193, 0.8);
-      text-align: center;
-      max-width: 420px;
-      border: 5px double #ff9ecf;
       z-index: 2;
       position: relative;
-    }
-
-    h1 {
-      font-family: 'Cherry Swash', cursive;
-      font-size: 2.5rem;
-      color: #ff5ab7;
-      text-shadow: 0 0 6px #ffccf5;
-      margin-bottom: 0.3rem;
-    }
-
-    h2 {
-      font-size: 1.1rem;
-      color: #888;
-      margin-bottom: 1.3rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(10, 10, 20, 0.85);
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 25px #00ffee;
+      border: 2px solid #00ffee;
+      max-width: 400px;
     }
 
     .profile-img {
-      width: 140px;
-      height: 140px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
-      border: 4px solid #ffb6c1;
-      margin-bottom: 1rem;
+      border: 4px solid #00ffee;
+      box-shadow: 0 0 20px #00ffee;
       object-fit: cover;
-      box-shadow: 0 0 20px #ff69b4;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      color: #00ffe7;
+      text-shadow: 0 0 10px #00ffee;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 1rem;
     }
 
     p {
-      font-size: 1rem;
-      color: #555;
-      margin-bottom: 1rem;
-      line-height: 1.6;
+      font-size: 0.95rem;
+      color: #a0f0ff;
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
     }
 
     .socials a {
-      display: inline-block;
-      margin: 0 8px;
-      color: #ff69b4;
+      color: #00ffe7;
       text-decoration: none;
-      font-weight: bold;
-      background: #ffeaf6;
+      margin: 0 10px;
       padding: 6px 12px;
-      border-radius: 12px;
-      border: 1px solid #ffb6c1;
-      transition: all 0.3s ease;
+      border: 1px solid #00ffee;
+      border-radius: 8px;
+      background-color: rgba(0, 255, 255, 0.1);
+      transition: 0.3s;
+      box-shadow: 0 0 8px #00ffee;
     }
 
     .socials a:hover {
-      background: #ffdee9;
-      transform: scale(1.05);
+      background-color: #00ffee;
+      color: #000;
+      box-shadow: 0 0 15px #00ffee;
     }
 
-    .sakura {
-      position: absolute;
-      top: -10px;
-      animation: fall 8s linear infinite;
-      color: #ffc0cb;
-      font-size: 24px;
+    .flicker {
+      animation: flicker 2s infinite;
     }
 
-    @keyframes fall {
-      0% {
-        transform: translateY(-10px) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
-    /* Glowing Aura Border */
-    .container::before {
-      content: "";
-      position: absolute;
-      top: -10px;
-      bottom: -10px;
-      left: -10px;
-      right: -10px;
-      border-radius: 2rem;
-      background: linear-gradient(45deg, #ff99cc, #ffe6f7, #ffcce0, #ff99cc);
-      z-index: -1;
-      filter: blur(18px);
-      animation: glow 8s linear infinite;
-    }
-
-    @keyframes glow {
-      0% { opacity: 0.7; }
-      50% { opacity: 1; }
-      100% { opacity: 0.7; }
+    @keyframes flicker {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { opacity: 1; }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <img src="https://i.pinimg.com/564x/1b/3e/1c/1b3e1c609e5c9a3fd93cce27a3b58c0b.jpg" alt="Profile" class="profile-img">
-    <h1>🌸 Arsiqx 🌸</h1>
-    <h2>✨異世界から来たAIの勇者✨</h2>
+  <!-- Rain canvas -->
+  <canvas class="rain" id="rain-canvas"></canvas>
+
+  <!-- Profile box -->
+  <div class="container flicker">
+    <img src="https://i.pinimg.com/564x/f6/5e/03/f65e0373a2341fbd3b6e4d3fd40e44a5.jpg" alt="Profile" class="profile-img">
+    <h1>Arsiqx</h1>
+    <h2>⚡異世界の影の勇者⚡</h2>
     <p>
-      ようこそ！I'm Arsiqx — peminat isekai & kereta JDM!<br>
-      Dunia ni penuh magik & horsepower 🦄🚗💨
+      Dalam dunia gelap, aku bangkit.<br>
+      JDM & AI adalah takdir aku. 🚗💻⚔️
     </p>
     <div class="socials">
-      <a href="#">💖 Instagram</a>
-      <a href="#">🌸 GitHub</a>
-      <a href="#">📺 YouTube</a>
+      <a href="#">GitHub</a>
+      <a href="#">YouTube</a>
+      <a href="#">Instagram</a>
     </div>
   </div>
 
-  <!-- Sakura animation -->
+  <!-- Rain effect JS -->
   <script>
-    for (let i = 0; i < 20; i++) {
-      let sakura = document.createElement("div");
-      sakura.className = "sakura";
-      sakura.style.left = Math.random() * 100 + "vw";
-      sakura.style.animationDuration = 6 + Math.random() * 5 + "s";
-      sakura.innerText = "🌸";
-      document.body.appendChild(sakura);
+    const canvas = document.getElementById('rain-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const rainDrops = [];
+    for(let i = 0; i < 150; i++){
+      rainDrops.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        length: Math.random() * 20 + 10,
+        opacity: Math.random(),
+        speed: Math.random() * 12 + 4
+      });
     }
+
+    function drawRain() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.strokeStyle = 'rgba(0,255,255,0.3)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      rainDrops.forEach(drop => {
+        ctx.moveTo(drop.x, drop.y);
+        ctx.lineTo(drop.x, drop.y + drop.length);
+      });
+      ctx.stroke();
+      moveRain();
+    }
+
+    function moveRain() {
+      rainDrops.forEach(drop => {
+        drop.y += drop.speed;
+        if(drop.y > canvas.height){
+          drop.y = -drop.length;
+          drop.x = Math.random() * canvas.width;
+        }
+      });
+    }
+
+    function animateRain() {
+      drawRain();
+      requestAnimationFrame(animateRain);
+    }
+
+    animateRain();
   </script>
 
-  <!-- Music autoplay langsung tanpa butang -->
+  <!-- Autoplay music -->
   <audio autoplay loop>
     <source src="https://files.catbox.moe/q9h1v8.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
@@ -163,3 +184,4 @@
 
 </body>
 </html>
+
