@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Arsiqx | ✨かわいいプロファイル✨</title>
+  <title>Arsiqx | ✨超かわいいプロフィール✨</title>
   <link href="https://fonts.googleapis.com/css2?family=Cherry+Swash&family=Kosugi+Maru&display=swap" rel="stylesheet">
   <style>
     * {
@@ -121,6 +121,22 @@
         opacity: 0;
       }
     }
+
+    /* Play Music Button */
+    #playMusicBtn {
+      background: #ffcdf3;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 0 10px #ffb6c1;
+      margin-top: 1rem;
+    }
+
+    #playMusicBtn:hover {
+      background: #ffc8e2;
+    }
   </style>
 </head>
 <body>
@@ -143,6 +159,7 @@
       🎶 BGM: <em>Kimi no Shiranai Monogatari</em>
       <button onclick="toggleMusic()">Mute / Unmute</button>
     </div>
+    <button id="playMusicBtn" onclick="playMusic()">▶️ Play Music</button>
   </div>
 
   <!-- Sakura falling animation -->
@@ -160,10 +177,17 @@
     function toggleMusic() {
       music.muted = !music.muted;
     }
+
+    function playMusic() {
+      const audio = document.getElementById('bg-music');
+      audio.muted = false;
+      audio.play();
+      document.getElementById('playMusicBtn').style.display = 'none';
+    }
   </script>
 
   <!-- Music autoplay -->
-  <audio id="bg-music" autoplay loop>
+  <audio id="bg-music" autoplay muted loop>
     <source src="https://files.catbox.moe/q9h1v8.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
