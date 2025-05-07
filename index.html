@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Arsiqx | ✨超かわいいプロフィール✨</title>
+  <title>Arsiqx ✨かわいい異世界✨</title>
   <link href="https://fonts.googleapis.com/css2?family=Cherry+Swash&family=Kosugi+Maru&display=swap" rel="stylesheet">
   <style>
     * {
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
       font-family: 'Kosugi Maru', sans-serif;
     }
 
     body {
-      background: linear-gradient(to top left, #ffd6ec, #ffe3f4);
+      background: linear-gradient(to top left, #ffe6f0, #ffe3f3, #fff0f5);
       overflow: hidden;
-      color: #333;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -25,20 +25,22 @@
     }
 
     .container {
-      background: #fffafa;
+      background: rgba(255, 248, 252, 0.95);
       padding: 2rem;
       border-radius: 2rem;
-      box-shadow: 0 0 30px rgba(255, 192, 203, 0.6);
+      box-shadow: 0 0 30px rgba(255, 182, 193, 0.8);
       text-align: center;
       max-width: 420px;
-      border: 5px dotted #ffb6c1;
+      border: 5px double #ff9ecf;
       z-index: 2;
+      position: relative;
     }
 
     h1 {
       font-family: 'Cherry Swash', cursive;
       font-size: 2.5rem;
-      color: #ff69b4;
+      color: #ff5ab7;
+      text-shadow: 0 0 6px #ffccf5;
       margin-bottom: 0.3rem;
     }
 
@@ -49,13 +51,13 @@
     }
 
     .profile-img {
-      width: 130px;
-      height: 130px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
-      border: 4px solid #ffc0cb;
+      border: 4px solid #ffb6c1;
       margin-bottom: 1rem;
       object-fit: cover;
-      box-shadow: 0 0 12px #ff69b4;
+      box-shadow: 0 0 20px #ff69b4;
     }
 
     p {
@@ -83,31 +85,11 @@
       transform: scale(1.05);
     }
 
-    .music-control {
-      margin-top: 1.3rem;
-      font-size: 0.9rem;
-    }
-
-    .music-control button {
-      background: #ffcdf3;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 10px;
-      cursor: pointer;
-      margin-left: 8px;
-      box-shadow: 0 0 5px #ffb6c1;
-    }
-
-    .music-control button:hover {
-      background: #ffc8e2;
-    }
-
-    /* Sakura animation */
     .sakura {
       position: absolute;
       top: -10px;
       animation: fall 8s linear infinite;
-      color: #ffb6c1;
+      color: #ffc0cb;
       font-size: 24px;
     }
 
@@ -122,20 +104,25 @@
       }
     }
 
-    /* Play Music Button */
-    #playMusicBtn {
-      background: #ffcdf3;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 12px;
-      cursor: pointer;
-      font-size: 1rem;
-      box-shadow: 0 0 10px #ffb6c1;
-      margin-top: 1rem;
+    /* Glowing Aura Border */
+    .container::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      bottom: -10px;
+      left: -10px;
+      right: -10px;
+      border-radius: 2rem;
+      background: linear-gradient(45deg, #ff99cc, #ffe6f7, #ffcce0, #ff99cc);
+      z-index: -1;
+      filter: blur(18px);
+      animation: glow 8s linear infinite;
     }
 
-    #playMusicBtn:hover {
-      background: #ffc8e2;
+    @keyframes glow {
+      0% { opacity: 0.7; }
+      50% { opacity: 1; }
+      100% { opacity: 0.7; }
     }
   </style>
 </head>
@@ -144,25 +131,19 @@
   <div class="container">
     <img src="https://i.pinimg.com/564x/1b/3e/1c/1b3e1c609e5c9a3fd93cce27a3b58c0b.jpg" alt="Profile" class="profile-img">
     <h1>🌸 Arsiqx 🌸</h1>
-    <h2>✨ AI Builder | Car Otaku | Anime Soul ✨</h2>
+    <h2>✨異世界から来たAIの勇者✨</h2>
     <p>
-      こんにちは〜！I'm Arsiqx 🌈<br>
-      Welcome to my magical kawaii profile page 💕<br>
-      I build dreams with code & horsepower 💻🚗
+      ようこそ！I'm Arsiqx — peminat isekai & kereta JDM!<br>
+      Dunia ni penuh magik & horsepower 🦄🚗💨
     </p>
     <div class="socials">
       <a href="#">💖 Instagram</a>
       <a href="#">🌸 GitHub</a>
       <a href="#">📺 YouTube</a>
     </div>
-    <div class="music-control">
-      🎶 BGM: <em>Kimi no Shiranai Monogatari</em>
-      <button onclick="toggleMusic()">Mute / Unmute</button>
-    </div>
-    <button id="playMusicBtn" onclick="playMusic()">▶️ Play Music</button>
   </div>
 
-  <!-- Sakura falling animation -->
+  <!-- Sakura animation -->
   <script>
     for (let i = 0; i < 20; i++) {
       let sakura = document.createElement("div");
@@ -172,22 +153,10 @@
       sakura.innerText = "🌸";
       document.body.appendChild(sakura);
     }
-
-    const music = document.getElementById('bg-music');
-    function toggleMusic() {
-      music.muted = !music.muted;
-    }
-
-    function playMusic() {
-      const audio = document.getElementById('bg-music');
-      audio.muted = false;
-      audio.play();
-      document.getElementById('playMusicBtn').style.display = 'none';
-    }
   </script>
 
-  <!-- Music autoplay -->
-  <audio id="bg-music" autoplay muted loop>
+  <!-- Music autoplay langsung tanpa butang -->
+  <audio autoplay loop>
     <source src="https://files.catbox.moe/q9h1v8.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
